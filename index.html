@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AK-Daily-Journal</title>
-    <link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 
 <body>
@@ -16,35 +16,35 @@
     </header>
     <!-- Main -->
     <main>
-        <Section>
-            <h2> Daily Journal</h2>
 
-            <div class="flexcontainer">
-                <form action=" ">
+        <h2> Abdurehman's Daily Journal</h2>
 
-                    <fieldset>
-                        <div class="box"> <label for="journalDate">Date of entry </label></div>
-                        <div class="box"> <input class="box" type="date" name="journalDate" id="journalDate"></div>
-                    </fieldset>
+        <div class="flexcontainer">
+            <form action=" ">
+
+                <fieldset>
+                    <div class="box"> <label for="journalDate">Date of entry </label></div>
+                    <div class="box"> <input class="box" type="date" name="journalDate" id="journalDate"></div>
+                </fieldset>
 
 
 
-                    <fieldset>
+                <fieldset>
 
-                        <div class="box"> <label for="conceptsCovered">Concepts Covered </label></div>
-                        <div class="box"> <input type="text" name="conceptsCovered" id="conceptsCovered"></div>
+                    <div class="box"> <label for="conceptsCovered">Concepts Covered </label></div>
+                    <div class="box"> <input type="text" name="conceptsCovered" id="conceptsCovered"></div>
 
-                    </fieldset>
-                    <fieldset>
+                </fieldset>
+                <fieldset>
 
-                        <div class="box"> <label for="journalEntry">Journal Entry </label></div>
-                        <div class="box"> <textarea type="text" name="journalEntry" d="conceptsCovered" cols="70" rows="15"></textarea></div>
+                    <div class="box"> <label for="journalEntry">Journal Entry </label></div>
+                    <div class="box"> <textarea type="text" name="journalEntry" d="conceptsCovered" cols="70" rows="15"></textarea></div>
 
-                    </fieldset>
-                    <fieldset>
+                </fieldset>
+                <fieldset>
 
-                        <div class="box"> <label for="mood">Mood for the day</label></div>
-                        <div class="box"> <select name="mood" id="moodList"></div>
+                    <div class="box"> <label for="mood">Mood for the day</label></div>
+                    <div class="box"> <select name="mood" id="moodList"></div>
                             <option value="calm">Calm </option>
                             <option value="content">Content</option>
                             <option value="excited">Excited</option>
@@ -54,21 +54,13 @@
                             <option value="sad">Sad</option>
                              <option value="stressed">Stressed</option>
                          </select>
-                    </fieldset>
-                    <button type="submit">Record Journal Entry</button>
-                </form>
-                </div>
-                <p></p>
+                </fieldset>
+                <button type="submit">Record Journal Entry</button>
+            </form>
+            </div>
+            <Section id="entryLog ${entry.id}" class="journalEntry">
 
-
-        </Section>
-
-        <article>
-
-        </article>
-
-        </form>
-
+            </Section>
 
     </main>
 
@@ -80,7 +72,7 @@
 
     </footer>
 
-    <script type="module" src="./scripts/main.js"></script>
+    <script type="module" src="./main.js"></script>
 </body>
 
 </html>

@@ -26,14 +26,14 @@ const journal = [{
         id: 3,
         date: "07/27/2025",
         concept: "Git and GitHub",
-        entry: "I learned about git,which is a version conrol system and developers collaboration tool. I cloned, pulled, pushed,merged and created branches",
+        entry: "I learned about git,which is a version conrol system and developers collaboration tool. I cloned, pulled, pushed,merged and created branches.",
         mood: "Content"
     },
     {
         id: 4,
         date: "07/28/2025",
         concept: "Automate html representation",
-        entry: "Using js components and modules, we created html representation by manpulating the DOM representation",
+        entry: "Using js components and modules, we created html representation by manpulating the DOM representation.",
         mood: "Stressed"
     }
 ]
