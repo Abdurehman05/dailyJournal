@@ -22,11 +22,22 @@
             "mood": "Content"
         },
         {
+            "id": 5,
+            "date": "09/10/2025",
+            "concept": "API and json-server",
+            "entry": "Instead of serving the arrayes inside our provider, we used a fetch method to get it from local json server as if our data stored in remote server.",
+            "mood": "Exited"
+        },
+        {
             "id": 4,
             "date": "07/28/2025",
             "concept": "Automate html representation",
             "entry": "Using js components and modules, we created html representation by manpulating the DOM representation.",
             "mood": "Stressed"
         }
-    ]
+    ],
+
+    "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
+    "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
+    "profile": { "name": "typicode" }
 }
