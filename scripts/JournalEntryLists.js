@@ -1,21 +1,19 @@
-import { useJournalEntries } from "./JournalDataProvider.js"
-import { JournalEntryComponent } from "./JournalEntry.js"
+import { useJournalEntries, getEntries } from "./JournalDataProvider.js";
+import { JournalEntryComponent } from "./JournalEntry.js";
 
 export const EntryListComponent = () => {
+    getEntries().then(() => {
+        const entryArray = useJournalEntries();
+        console.log("EntryArray", entryArray);
+        addEntriesToDom(entryArray);
+    });
+};
 
-    const contentElement = document.querySelector(".journalEntry")
+const addEntriesToDom = anEntryArray => {
+    const contentElement = document.querySelector(".journalEntry");
 
-    const entries = useJournalEntries()
-
-    let entryHTMLRepresentations = "";
-
-    for (const entry of entries) {
-
-        entryHTMLRepresentations += JournalEntryComponent(entry)
-
-    }
-
-    contentElement.innerHTML += `
-    ${entryHTMLRepresentations}
-    `
-}
+    let HTMLArray = anEntryArray.map(singleEntry => {
+        return JournalEntryComponent(singleEntry);
+    });
+    contentElement.innerHTML = HTMLArray.join("");
+};

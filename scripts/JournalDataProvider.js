@@ -1,4 +1,4 @@
-import { JournalEntryComponent } from "./JournalEntry.js";
+const journalURL = "http://localhost:8088/entries";
 
 let journal = [];
 
@@ -11,14 +11,9 @@ export const useJournalEntries = () => {
 };
 
 export const getEntries = () => {
-    return fetch("http://localhost:8088/entries")
+    return fetch(journalURL)
         .then(response => response.json())
-        .then(entries => {
-            let allEntries = entries.map(entry => {
-                let entryHTML = JournalEntryComponent(entry);
-                allEntries += entryHTML;
-                return allEntries;
-            });
-            entryLog.innerHTML = allEntries.join("");
+        .then(parsedRes => {
+            journal = parsedRes;
         });
 };
