@@ -5,3 +5,8 @@ body {
 h2 {
     text-align: center;
 }
+
+footer {
+    text-emphasis: bold;
+    text-align: center;
+}

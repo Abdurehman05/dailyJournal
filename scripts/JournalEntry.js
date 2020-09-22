@@ -7,8 +7,9 @@ const eventHub = document.querySelector(".container");
 export const JournalEntryComponent = entry => {
     return `
         <section id="entry--${entry.id}" class="journalEntry">
-            
-            <p>${entry.entry} ${entry.date}</p> 
+            <h3>${entry.concept}</h3>
+            <p>${entry.entry}</p> 
+            <p>${entry.date}</p> 
             <button id="deleteEntry--${entry.id}">Delete Entry</button>
             
         </section>
