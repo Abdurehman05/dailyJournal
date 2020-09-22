@@ -1,19 +1,22 @@
 import { useJournalEntries, getEntries } from "./JournalDataProvider.js";
 import { JournalEntryComponent } from "./JournalEntry.js";
 
+const eventHub = document.querySelector(".container");
+const contentTarget = document.querySelector(".journalEntry");
+
 export const EntryListComponent = () => {
-    getEntries().then(() => {
-        const entryArray = useJournalEntries();
-        console.log("EntryArray", entryArray);
-        addEntriesToDom(entryArray);
-    });
+    getEntries()
+        .then(useJournalEntries)
+        .then(addEntriesToDom);
 };
 
 const addEntriesToDom = anEntryArray => {
-    const contentElement = document.querySelector(".journalEntry");
-
-    let HTMLArray = anEntryArray.map(singleEntry => {
-        return JournalEntryComponent(singleEntry);
+    let HTMLArray = anEntryArray.map(entryObj => {
+        return JournalEntryComponent(entryObj);
     });
-    contentElement.innerHTML = HTMLArray.join("");
+    contentTarget.innerHTML = HTMLArray.join("");
 };
+
+eventHub.addEventListener("journalStateChanged", () => {
+    EntryListComponent();
+});
