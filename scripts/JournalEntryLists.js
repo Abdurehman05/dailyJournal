@@ -1,4 +1,8 @@
-import { useJournalEntries, getEntries } from "./JournalDataProvider.js";
+import {
+    useJournalEntries,
+    getEntries,
+    deleteEntry
+} from "./JournalDataProvider.js";
 import { JournalEntryComponent } from "./JournalEntry.js";
 
 const eventHub = document.querySelector(".container");
@@ -19,4 +23,12 @@ const addEntriesToDom = anEntryArray => {
 
 eventHub.addEventListener("journalStateChanged", () => {
     EntryListComponent();
+});
+
+eventHub.addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.id.startsWith("deleteEntry--")) {
+        const [prefix, id] = event.target.id.split("--");
+        deleteEntry(id);
+    }
 });

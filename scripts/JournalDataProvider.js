@@ -20,7 +20,7 @@ export const getEntries = () => {
 export const useJournalEntries = () => {
     const sortedByDate = journal.sort(
         (currentEntry, nextEntry) =>
-        Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
+        Date.parse(nextEntry.date) - Date.parse(currentEntry.date)
     );
     return sortedByDate;
 };
@@ -36,5 +36,13 @@ export const saveJournalEntry = newEntryObj => {
         .then(() => {
             getEntries();
         })
+        .then(dispatchStateChangeEvent);
+};
+
+export const deleteEntry = id => {
+    return fetch(`http://localhost:8088/entries/${id}`, {
+            method: "DELETE"
+        })
+        .then(getEntries)
         .then(dispatchStateChangeEvent);
 };
