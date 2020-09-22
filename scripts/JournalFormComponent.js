@@ -3,7 +3,7 @@ import {
     getEntries,
     useJournalEntries
 } from "./JournalDataProvider.js";
-import { EntryListComponent } from "./JournalEntryLists.js";
+// import { EntryListComponent } from "./JournalEntryLists.js";
 
 const eventHub = document.querySelector(".container");
 const contentTarget = document.querySelector(".entryFormContainer");
@@ -29,7 +29,7 @@ eventHub.addEventListener("click", clickEvent => {
         }
     }
 });
-const render = entryArray => {
+const render = () => {
     contentTarget.innerHTML = `
 
     <form>
